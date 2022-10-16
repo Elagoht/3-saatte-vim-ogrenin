@@ -1,4 +1,7 @@
-> Bu içerik Furkan Baytekin tarafından [Herkes İçin Linux YouTube kanalı](https://www.youtube.com/channel/UCIWYzLPBy2Av4sgUsRClP0g) için hazırlanmıştır. Bu içeriği kullanabilirsiniz ancak paylaşırken referansta bulunmayı unutmayın.
+> Bu içerik Furkan Baytekin tarafından [Herkes İçin Linux YouTube
+> kanalı](https://www.youtube.com/channel/UCIWYzLPBy2Av4sgUsRClP0g) için
+> hazırlanmıştır. Bu içeriği kullanabilirsiniz ancak paylaşırken referansta
+> bulunmayı unutmayın.
 
 > Vim Kullanımı
 
@@ -20,6 +23,7 @@ Vim üzerinde 13 adet mod vardır. Bunlar:
 * Komut ( : )
 * Ekleme ( -- Insert -- )
     * Normal Ekleme ( -- (insert) --)
+    * Ctrl+X ( ^X Mode ) 
 * Değiştirme ( -- Replace -- )
     * Normal Değiştirme ( -- (replace) -- )
 * Görsel ( -- Visual -- )
@@ -203,9 +207,9 @@ Yazım yalnışını düzelt!
 Bu işlemlere, henüz görsel moddan bahsetmeden değineceğiz. Görsel mod
 yardımıyla kopyaladığınız metinleri buradaki komutlarla yapıştırabilirsiniz.
 
-* `Y` ya da `yy` ile bulunulan satırı kopyalayabilirsiniz.
-* "P" ile bulunulan karakterin öncesine yapıştırma işlemi yapılır.
-* "p" ile bulunulan karakterin sonrasına yapıştırma işlemi yapılır.
+* `Y` ya da `yy` ile bulunulan satırı kopyalayabilirsiniz (yank).
+* "P" ile bulunulan karakterin öncesine yapıştırma işlemi yapılır (Paste).
+* "p" ile bulunulan karakterin sonrasına yapıştırma işlemi yapılır (paste).
 
 **Kopyalanacak satır**
 
@@ -357,6 +361,10 @@ satır 5
 * `Ctrl+w, >` pencereyi genişletir.
 * `Ctrl+w, -` pencereyi kısaltır.
 * `Ctrl+w, +` pencereyi uzatır.
+* `Ctrl+w, H` pencereyi sola taşır.
+* `Ctrl+w, J` pencereyi alta taşır.
+* `Ctrl+w, K` pencereyi üste taşır.
+* `Ctrl+w, L` pencereyi sağa taşır.
 
 ## Ekleme Modu
 
@@ -367,7 +375,8 @@ yazabilirsiniz.
 
 ### Ekleme Moduna Geçmek
 
-Ekleme moduna geçmenin birçok farklı yolu vardır. Normal modda iken ekleme moduna nasıl geçilebileceğine bakalım.
+Ekleme moduna geçmenin birçok farklı yolu vardır. Normal modda iken ekleme
+moduna nasıl geçilebileceğine bakalım.
 
 * `i` ya da `Insert` ile bulunulan karakterde ekleme moduna geçilir.
 * `a` (append) ile bir sonraki karakterden başlayarak ekleme moduna geçilir.
@@ -396,8 +405,8 @@ Basitçe `ESC` tuşuna basarak normal moda dönebilirsiniz.
 * `Ctrl+d` satırı bir tab boşluğu ileri alır.
 
 Metinleri
-	aynı hizaya
-		getirin.
+    aynı hizaya
+        getirin.
 
 ### Kesme ve Yapıştırma İşlemleri
 
@@ -472,4 +481,464 @@ sonra değiştirme moduna geçilir.
 
 deneme tahtası.
 
+## Görsel Modu
+Görsel modunun amacı metin seçimi yapmaktır. Seçtiğiniz metinler üzerinde
+birçok işlem gerçekleştirebilirsiniz. Standart görsel modunda karakter bazında
+seçim yapabilirsiniz.
+
+Seçimi başlatacağınız karaktere gelerek `v` yazarak seçimi başlatabilirsiniz.
+Seçimi genişletmek için normal modda bahsedilen "metinde gezinme kısayolları"nı
+kullanabilirsiniz.
+
+Seçimi sonuçlandırmanıza gerek yoktur. Seçimde hareket etme kısayolları farklı
+işlem kısayolları farklıdır. Bir işlem gerçekleştirildikten sonra otomatik
+olarak normal moda geçiş yapılacaktır.
+
+### Kesme, Kopyalama ve Yapıştırma İşlemleri
+
+ Metin seçildikten sonra:
+
+* `y` ile kopyalama yapabilirsiniz.
+* `d` ya da `Delete` ile kesme yapabilirsiniz.
+* `c` ile kesip ekleme moduna geçebilirsiniz (change).
+* `p` ya da `P` ile üzerine yapıştırma yapabilirsiniz.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+
+### Son Seçimi Tekrarlamak
+
+Son seçimi tekrarlamak için seçimin başından sonuna yeniden gitmek yerine
+kısaca `gv` yazabilirsiniz.
+
+### Büyük / Küçük Karakter Düzenlemeleri
+
+* `~` seçili karakterler büyükse küçük, küçükse büyük yapar.
+* `u` seçilen karakterleri küçük harf yapar.
+* `U` seçilen karakterleri büyük harf yapar.
+
+bu satırı tamamen büyük harf yapın.
+BU SATIRI TAMAMEN KÜÇÜK HARF YAPIN.
+bU sATIRI bAŞLIK fORMATINA gETİRİN. 
+BAĞIRMA BANA!
+
+### Toplu Sayı Artırma / Eksiltme
+
+* Seçim içerisine dahil tüm sayıları artırmak için `Ctrl+a`
+  kullanılabilir.
+* Seçim içerisine dahil tüm sayıları azaltmak için `Ctrl+z`
+  kullanılabilir.
+
+Aşağıdaki sayıları 1'den 4'e kadar olacak şekilde artırın.
+
+```html
+<div class="page-button">-24</div>
+<div class="page-button">-23</div>
+<div class="page-button">-22</div>
+<div class="page-button">-21</div>
+```
+
+### Girintiler
+
+Normal modda olduğu gibi görsel modunda da girintiler ayarlanabilir. Ancak tek
+karakterle işlem gerçekleştirilir. Bir satir içerisinde seçili herhangi bir
+karakter varsa, işleme o satır da dahil edilecektir. Satırın tamen seçili
+olmasına gerek yoktur.
+
+* `>` bir tab boşluğu içeri alır.
+* `<` bir tab boşluğu dışarı alır.
+
+### Paragraf Araçları
+
+Uzun satırları ve özellikle paragrafları birden fazla kısa satıra ayırmak
+(wrap) için `gw` kullanılır.
+
+Aşağıdaki paragrafı satırlara bölün.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+### Kayıtlar
+
+Normal modda bahsedilen kayıt özelliklerini burada da kullanabilirsiniz. 
+
+## Görsel Satır
+
+Görsel modunda karakter bazlı bir seçim yaparken görsel satır modunda satır
+bazlı seçim yapılır. Bir satırın yarısını alamazsınız. bir karakter bile
+seçseniz satırın tamamı seçime dahil edilir. Paragraf ve kod bloğu taşıma
+işlerinde faydalı olabilir. Bunun dışında kısayollar aynıdır.
+
+Aşağıdaki kod bloklarının yerini değiştirin.
+
+```bash
+{ 
+    say_hello Furkan
+}
+function say_hello {
+    echo hello $@
+}
+```
+
+## Görsel Blok
+
+Standard görsel modu karakter bazlı, görsel satır modu satır bazlı seçim
+yaparken görsel blok modu koordinat düzeninde bir dörtgen oluşturacak şekilde
+seçim yapar. Bunu anlamak için aşağıdaki dikdörtgeni seçmeyi deneyin.
+
+****************
+*--------------*
+*--------------*
+*--------------*
+*--------------*
+****************
+
+---
+
+Her zaman satırlar aynı uzunlukta olmayabilir. Aşağıdaki kesik dörtgeni seçmeyi
+deneyin ve çalışma mantığını daha iyi anlayın.
+
+****************
+*--------------*
+*-----------
+*---------
+    -------*
+****************
+
+---
+
+Şimdi daha anlamlı bir yerde kullanalım. Aşağıdaki metinde büyük harflerle
+yazılmaması gereken harfleri görsel blok modunu kullanarak düzenltin.
+
+Lorem ipsum dolor sit amet,
+CoNSECTETUR adipiscing elit,
+SeD DO EIUSmod tempor!
+InCIDIDUNT ut labore,
+Et dolore magna aliqua.
+
+## Arama Modu
+
+Yukarıdan aşağı, arama yapmak için `/` kullanılır. Ardından arama terimini
+yazarsınız. Arama terimi düzenli ifadeler (regular expression) içerebilir.
+Enter'e basarak aramaya başlayabilirsiniz.
+
+Eşleşmeler renklendirilecektir. Aramaya başladığınızda normal moda dönersiniz.
+
+* Sonraki eşleşmeye gitmek için `n` kullanılır.
+* Önceki eşleşmeye gitmek için `N` kullanılır.
+
+### Arama Operatörleri
+
+Aramalarınızı sınırlandırmak veya çeşitlendirmek için bazı operatörler
+mevcuttur.
+
+* `\<` kelime başını ifade eder.
+* `\>` kelime sonunu ifade eder.
+* `\c` büyüklük / küçüklüğü yok sayarak arar.
+* `\C` büyüklük / küçüklüğe bakarak arar. (Varsayılan ayardır ancak bu ayar
+  değiştirildiğinde bu operatör kullanılabilir.)
+
+Bu doküman içerisinde "lorem" terimini arayın.
+Bu doküman içerisinde "lorem\c" terimini arayın.
+Bu doküman içerisinde "eş" terimini arayın.
+Bu doküman içerisinde "\<eş" terimini arayın.
+Bu doküman içerisinde "eş\>" terimini arayın.
+Bu doküman içerisinde "^#.*" terimini arayın.
+
+---
+
+`*` normal moddayken basıldığında üzerinde bulunulan ifadeyi ileri doğru
+aramaya başlar. 
+
+## Geriye Doğru Arama Modu
+
+Arama modunun geriye doğru yapılan halidir. `n` ve `N` kısayollarının da yönü
+değişir.
+
+`#` normal moddayken basıldığında üzerinde bulunulan ifadeyi geriye doğru
+aramaya başlar.
+
+Geri kalan tüm özellikler aynıdır.
+
+## Komut Modu
+
+Vim'in en kapsamlı modudur. Kısayollarla yapılabilen her şeyi yapabildiği gibi
+kendine has çok sayıda komutu da mevcuttur. Bu komutların bazıları parametre de
+alabilmektedir. Komut moduna geçmek için normal moddayken `:` yazmalısınız.
+Ardından komutun devamını yazıp `Enter` tuşuna basarak komutu
+gerçekleştirirsiniz.
+
+Komut modunda çok sayıda özellik bulunmaktadır. Burada tamamından
+bahsetmeyeceğiz. İhtiytaçduydukça araştırabilir ve yeni özellikleri
+keşfedebilirsiniz. Burada en önemlilerinden bahsedeceğiz.
+
+Vim'de bazı ayarlar vardı ve bu ayarlar `:set` komutuna parametre göndererk
+düzenlenir. Alt başlıklarda buna sıklıkla rastlayacaksınız.
+
+### Arama Kısayolları
+
+Öncelike ekranınızdaki eşleşmelerin renklendirmelerini kaldırmak için şu komutu
+deneyin: `:noh` (no highlight)
+
+---
+
+Arama sonuçlarını renklendirme:
+
+* `:set hlsearch!` arama eşleşmelerinin renklendirilmesini açar/kapatır.
+* `:set hlsearch` arama eşleşmelerinin renklendirilmesini açar.
+
+---
+
+Aramalarda büyüklük / küçüklük ayarları:
+
+* `:set ic` ya da `:set ignorecase` ile hassasiyeti kaldırırsınız.
+* `:set noic` ya da `set noignorecase` ile hassasiyeti sağlarsınız.
+* `:set sc` ya da `:set smartcase` ile arama terimi küçükse hepsini, büyükse
+  sadece büyükleri aramayı sağlarsınız.
+
+### Dizin İşlemleri
+
+Çalışılan dizin işlemleri:
+
+* `:pwd` çalışılan dizini yazdırır (print working directory).
+* `:cd DİZİN` çalışılan dizini değiştir (change directory). Örneğin `:cd
+  Documents` ya da `cd ~/Documents`.
+* `:cd` parametre verilmemiş hali, çalışılan dizini kullanıcının ana dizini
+  olarak ayarlar.
+* `:cd -` normal cd komutunda olduğu gibi bir önceki bulunulan dizini çalışılan
+  dizin olarak ayarlar.
+
+### Dosya İşlemleri
+
+Dosyayı kaydetme:
+
+Şu ana kadar dosyada yapılan değişiklikleri kaydetmek için `:w` komutu
+kullanılır. Eğer üzerinde çalıştığınız metin bir dosyayla ilişkilendirilmemişse
+`:w DOSYAADI` yazarak kayıt edebilirsiniz. Dosya aksi belirtilmedikçe çalışılan
+dizinde kaydedilecektir. Yani:
+
+* `:w` var olan dosyadaki değişiklikleri yazar (write).
+* `:w!` salt-okunur modda açılan dosyayı yazılabilir hale getirerek yazar.
+* `:w dosya.adı` metni, aynı dizinde "dosya.adı" isimli bir dosyaya kaydeder,
+  dosya yoksa oluşturup kaydederF farklı kaydet amacıyla da kullanılabilir.
+* `:w /dosya/yolu/dosya.adı` belirtilen dizinde belirtilen dosyaya kayıt yapar.
+* `:wa` açık tüm dosyaları kaydeder.
+* `:wr`, `:wri`, `:writ` ve `:write`; `:w` ile aynıdır.
+
+---
+
+Dosya açma:
+
+Açılan dosyalar yeni bir tamponda (buffer) açılır. Önceden açık olan dosya
+kapatılmaz. Önceki tamponda beklemeye devameder.
+
+* `:e DOSYA` belirtilen dosyayı düzenlemek üzere açar. Beliertilen dosya yoksa
+  yeni bir metin dosyası açar ancak kaydedilene kadar dosyayı oluşturmaz
+  (edit).
+* `:ed`, `:edi` ve `:edit`; `:e` ile aynıdır.
+
+---
+
+Yeni pencerede dosya açma:
+
+* `:new DOSYA` ile yeni bir pencerede dosya açabilirsiniz. İlgili dosya mevcut
+  değilse sonraki kaydetme yeni dosya oluşturulur.
+* `:vnew` açılacak yeni pencereyi "vertical" olarak oluşturur.
+
+---
+
+Dosyayı kapatma:
+
+Dosyayı kapattığınız zaman ilgili pencere kapanmış olur. Hiçbir pencere
+kalmadığı zaman programdan çıkış yapılır.
+
+* `:q` aktif pencereyi kapatır. Normal moddaki `Ctrl+w, q` ile aynıdır.
+* `:q!` değişiklikleri yok sayarak aktif pencereyi kapatır.
+* `:qu`, `:qui`, `:quit`; `:q` ile aynıdır.
+* `:wq` olarak birleştirerek dosyayı kaydedip pencereyi kapatabilirsiniz.
+
+### Tamponlar (Buffer)
+
+`:edit` ile yeni bir tamponda dosya açıldığını söylemiştik.
+
+* `:bn` ya da `:bnext` (buffer next) ile sonraki tampona geçebilirsiniz.
+* `:bp` ya da `:bprevious` (buffer previous) ile önceki tampona geçebilirsiniz.
+* `:bd` ya da `:bdelete` (buffer delete) aktif tamponu kapatır.
+* `:bd!` ya da `:bdelete!` (buffer delete) aktif tampondaki değişiklikleri yok
+  sayarak kapatır.
+* `:ls` ya da `:buffers` aktif tamponları listeler.
+* `:bSAYI` ya da `:buffer SAYI` belirtilen numaralı tampona gider.
+
+### Görünüm
+
+`:colorscheme TEMA` ile renk teması değiştirilir. `Tab` ile seçenekler
+renk teması ayarlama:
+listelenebilir.  Örneğin: `:colorscheme habamax`
+
+---
+
+Satır numarası ayarları:
+
+* `:set number` satır numaraları ekler.
+* `:set nonumber` satır numaralarını kaldırır.
+* `:set number!` satır numaralarını ekler/kaldırır.
+
+---
+
+Belirli satırlara gitmek:
+
+* `:SAYI` ile belirtilen satır numarasına gidebilirsiniz. Eğer satır sayısından
+  fazla bir değer girilirse son satıre gider. Örneğin `:42`
+* `:SAYI+SAYI` işlemin sonucu olan satır numarasına gider.
+* `:%` dokümanın sonuna gider.
+* `:-14` 14 satır geri gider.
+* `:+14` 14 satır ileri gider.
+* `:#` bulunulan satırın numarasını verir. Satır numaraları görünmezken
+  kullanışlı olabilir.
+
+---
+
+Satır taşması ayarları:
+
+* `:set wrap` ekrana sığmayan satırları alt satırdan devam ettirmek için
+  kullanılır. Varsayılan ayardır.
+* `:set nowrap` satırların alt satıra taşmasını engeller. Görüntü yana doğru
+  kayar.
+
+Bu cümle, yukarıdaki ayarları deneyebilmeniz açısından sizler için yazılmış ve gereksizce uzatılmış bir cümledir ve ayarların ikisini de bu cümle üzerinde deneyebilirsiniz.
+
+### Girintiler
+
+* `:set autoindent` otomatik girintiyi açar.
+* `:set noautoindent` otomatik girintiyi kapatır.
+* `:set smartindent` akıllı girintiyi açar.
+* `:set nosmartindent` akıllı girintiyi kapatır.
+* `:set expandtab` tab boşluğu yerine boşluk kullanmayı sağlar.
+* `:set tabstop=SAYI` tab boşluğunun genişliğini ayarlar.
+* `:set shiftwidth=SAYI` girinti boşluğunun genişliğini ayarlar. (<< ,>> ,<, >
+  Kullanımlarında etkilidir.)
+* `:retab` var olan eski tab boşluklarını yeni kurala göre düzenler.
+
+### Yardım Sayfaları
+
+* `:h KOMUT` ya da `:help KOMUT` kendisinden sonra yazılan komut
+  ile ilgili varsa yardım sayfasını açar.
+* `:h` ya da `:help` vim'in kendi yardım sayfasını açar.
+
+### Terminal Komutları
+
+`:!KOMUT VE PARAMATRELER` şeklinde bash komutları çalıştırıp
+çıktılarını görüntüleyebilirsiniz. Ancak unutmayın komutu
+çalıştırdıktan sonra o programa girdi veremezsiniz. Sadece
+çıktılarını görüntüleyebilirsiniz. Örneğin:
+
+* `:ls -la` çalışılan dizindeki dosyaları listeler.
+* `:./%` "%" şu anda çalışılan dosya anlamına geldiği için bu
+  dizindeki bu dosyayı çalıştır anlamına gelir. Dosyaya çalıştırma
+  yetkisi vermeniz gerekiyorsa onu da bu yöntemle verebilirsiniz.
+* `:chmod +x %` çalışılan dosyaya çalıştırma yetkisi verir.
+
+### Diğer Modların Komutlarını Çalıştırmak
+
+* `:normal!KISAYOL` normal mod kısayollarını normal modda yazmak yerine bu
+  şekilde de kullanabilirsiniz.
+* `:normal!i` yazarak insert mod komutu kullanabilirsiniz. Aslında burada
+  farkına varmanız gereken şey, normal moddan insert moda geçmenin aslında
+  insert adlı bir fonksiyonu çalıştırdığıdır. Demek oluyor ki `:normal!ibu
+  metni yazdır.` yazarsam bulunulan yere "bu metni yazdır." yazmış olacağım.
+* `:normal!4ikoyun ` yazarsam 4 kere "koyun " metnini yarleştirir. Normal
+  moddan ekleme moduna geçmeden önce de, yazacağınız sayı ekleme modunu
+  sonlandırdığınızda o yazıyı kaç kere yazacağınızı da etkiler.
+
+### Görsel Mod ile Diğer Modların Komutlarını Birleştirme
+
+Görsel moda geçip bir komut çalıştırırsanız her satır için o komutu
+çalıştırabilirsiniz. Bir alıştırma ile pekiştirme yapalım. Normal modda`A`
+komutu ile satırın sonuna gidildiğini hatırlarsınız. "println" ile başlayan satırları, görsel satır modu ile seçip `:normal!A;` yazarak satırların sonuna ";" eklenmesini sağlayabilirsiniz.
+
+```
+fn main() {
+    println!("Merhaba Dünya")
+    println!("Ben her zaman")
+    println!("satır sonuna")
+    println!("noktalı virgül")
+    println!("koymayı unuturum.")
+}
+```
+
+### Aranan Metni Değiştirme
+
+Sed komutuna benzer şekilde vimde de satırları düzenleyebilirsiniz. Sed
+komutundan farklı bayrakları (flag) olsa da anlaması kolaydır.
+
+Aşağıdaki paragrafta geçen "fatih"leri "mehmet" ile değiştirin. Bunun
+için o satırda `:s/fatih/mehmet` komutunu çalıştırmayı deneyin.
+
+"Memleketi fatihçiklere borçluyuz, fatihçikler olmasa burada olamazdık."
+
+Ancak sadece ilk eşleşmenin değiştiğini gördünüz. Şimdi aynı metni iki
+farklı satırda ele alalım. Görsel satır modu ile iki satırı da seçip
+aynı komutu tekrarlayın.
+
+"Memleketi fatihçiklere borçluyuz, fatihçikler olmasa burada olamazdık.
+ Memleketi fatihçiklere borçluyuz, fatihçikler olmasa burada olamazdık."
+
+Bu sefer de her satırdaki ilk değişikliğin gerçekleştiğini gördünüz.  Bu
+değişikliğin satırdaki her eşleşme için yapılmasını isterseniz global
+bayrağını (flag) eklemelisiniz. `:s/fatih/mehmet/g` komutu ile yeniden deneyin.
+
+"Memleketi fatihçiklere borçluyuz, fatihçikler olmasa burada olamazdık.
+ Memleketi fatihçiklere borçluyuz, fatihçikler olmasa burada olamazdık."
+
+---
+
+Birkaç farklı bayrak bulunmaktadır:
+
+* `g` global anlamına gelir ve satırdaki tüm eşleşmeler için işlem yapar.
+* `c` confirm anlamına gelir ve her eşleşme için onay ister.
+* `i` case insensitive anlamına gelir ve büyük / küçük harf ayrımı yapmaz.
+
+---
+
+Arama yerleştirme işleminde "/" karaterinin kendisini kullanacaksanız kaçış
+karakterleri ile uğraşmak yerine farklı ayraçlar kullanabilirsiniz. Aşağıdaki
+komutlar bire bir aynı işlemi gerçekleştirir:
+
+* `:s/foo/bar`
+* `:s#foo#bar`
+* `:s:foo:bar`
+* `:s|foo|bar`
+
+---
+
+Tüm dosyada düzenleme yapmak için tüm içeriği seçmek yerine komutun başına "bu
+dosya" anlamına gelen "%" işaretini koyabilirsiniz.
+
+* `%s/foo/bar/gc`
+
+### Dosya Ağacı
+
+`:Sexplore` ya da `:Sex` yeni bir pencerede bir dosya ağacı açmak için
+kullanılır.
+
+## Terminal Modu
+
+Vim içerisinde bütünleşik bir terminal emülatörü çalıştırabilirsiniz. Bu sayede
+kod yazarken başka bir pencerede kodlarınızı denemek de mümkün olacaktır.
+İsterseniz bir terminal arayüzlü dosya gezgini, müzik çalar, internet
+tarayıcısı için de kullanabilirsiniz.
+
+Güvenliğiniz açısından önce terminal modundan nasıl çıkılacağını yazıyorum:
+`Ctrl+\, Ctrl+n` yani Ctrl basılı iken yeni satır karakteri yazmalısınız. Ancak
+bunu Türkçe Q klavyede yazmak için ``Ctrl+Alt Gr+*, Ctrl+n`` yazmalısınız. Bu
+kısayol terminalde gezinme moduna geçmenizi sağlar.
+
+Terminal açmak için `:terminal` ya da `:term`  komutu kullanılır. Bahsedilen
+pencere taşıma kısayolları ile açılan pencerenin yerini değiştirebilirsiniz.
+
+Açılan pencere, `Ctrl+w` ile başlayan kısayollara duyarlıdır. Ayrıca terminalin
+kapanması durumunda pencere de kendiliğinden kapanacaktır.
+
+## Terminalde Gezinme Modu
+
+``Ctrl+Alt Gr+*, Ctrl+n`` ile önceden bahsedildiği üzere bu moda geçiş yapabilirsiniz.
 
