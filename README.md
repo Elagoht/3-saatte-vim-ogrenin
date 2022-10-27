@@ -17,7 +17,7 @@ atalım.
 
 # Vim Modları
 
-Vim üzerinde 13 adet mod vardır. Bunlar:
+Vim üzerinde 14 adet mod vardır. Bunlar:
 
 * Normal ( )
 * Komut ( : )
@@ -208,8 +208,8 @@ Bu işlemlere, henüz görsel moddan bahsetmeden değineceğiz. Görsel mod
 yardımıyla kopyaladığınız metinleri buradaki komutlarla yapıştırabilirsiniz.
 
 * `Y` ya da `yy` ile bulunulan satırı kopyalayabilirsiniz (yank).
-* "P" ile bulunulan karakterin öncesine yapıştırma işlemi yapılır (Paste).
-* "p" ile bulunulan karakterin sonrasına yapıştırma işlemi yapılır (paste).
+* "P" ile bulunulan karakterin öncesine yapıştırma işlemi yapılır (Put).
+* "p" ile bulunulan karakterin sonrasına yapıştırma işlemi yapılır (put).
 
 **Kopyalanacak satır**
 
@@ -265,8 +265,8 @@ a ve b kayıtlarına iki farklı satır kopyalayalım.
 `a` kaydına bunu kopyaladım.
 Bunu ise `b` kaydına kopyaladım.
 
-a kaydını buraya yapıştırın vvv:
-b kaydını buraya yapıştırın vvv:
+"a" kaydını buraya yapıştırın vvv:
+"b" kaydını buraya yapıştırın vvv:
 
 ### İşlemi Geri / İleri Alma
 
@@ -380,8 +380,8 @@ moduna nasıl geçilebileceğine bakalım.
 
 * `i` ya da `Insert` ile bulunulan karakterde ekleme moduna geçilir.
 * `a` (append) ile bir sonraki karakterden başlayarak ekleme moduna geçilir.
-* `o` Altta yeni bir satır oluşturarak orada ekleme moduna geçer.
-* `O` Üstte yeni bir satır oluşturarak orada ekleme moduna geçer.
+* `o` altta yeni bir satır oluşturarak orada ekleme moduna geçer.
+* `O` üstte yeni bir satır oluşturarak orada ekleme moduna geçer.
 * `I` bulunulan satırın başına gelerek ekleme moduna geçer.
 * `A` bulunulan satırın sonuna gelerek ekleme moduna geçer.
 * `s` bulunulan karakteri keserek ekleme moduna geçer.
@@ -402,7 +402,7 @@ Basitçe `ESC` tuşuna basarak normal moda dönebilirsiniz.
 ### Girinti Ayarları
 
 * `Ctrl+t` satırı bir tab boşluğu ileri alır.
-* `Ctrl+d` satırı bir tab boşluğu ileri alır.
+* `Ctrl+d` satırı bir tab boşluğu geri alır.
 
 Metinleri
     aynı hizaya
@@ -464,7 +464,7 @@ Kısayolları ekleme modu ile aynıdır.
 
 ### Değiştirme Moduna Geçiş
 
-* `R` Normal moddayken ile geçiş sağlar.
+* `R` normal moddayken geçiş sağlar.
 * `Insert` ile ekleme modundayken geçiş sağlanır.
 
 ### Mod Değişikliği
@@ -482,6 +482,7 @@ sonra değiştirme moduna geçilir.
 deneme tahtası.
 
 ## Görsel Modu
+
 Görsel modunun amacı metin seçimi yapmaktır. Seçtiğiniz metinler üzerinde
 birçok işlem gerçekleştirebilirsiniz. Standart görsel modunda karakter bazında
 seçim yapabilirsiniz.
@@ -498,10 +499,10 @@ olarak normal moda geçiş yapılacaktır.
 
  Metin seçildikten sonra:
 
-* `y` ile kopyalama yapabilirsiniz.
-* `d` ya da `Delete` ile kesme yapabilirsiniz.
+* `y` ile kopyalama yapabilirsiniz (yank).
+* `d` ya da `Delete` ile kesme yapabilirsiniz (delete).
 * `c` ile kesip ekleme moduna geçebilirsiniz (change).
-* `p` ya da `P` ile üzerine yapıştırma yapabilirsiniz.
+* `p` ya da `P` ile üzerine yapıştırma yapabilirsiniz (put).
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
@@ -519,14 +520,14 @@ kısaca `gv` yazabilirsiniz.
 
 bu satırı tamamen büyük harf yapın.
 BU SATIRI TAMAMEN KÜÇÜK HARF YAPIN.
-bU sATIRI bAŞLIK fORMATINA gETİRİN. 
+bU sATIRI bAŞLIK fORMATINA gETİRİN.
 BAĞIRMA BANA!
 
 ### Toplu Sayı Artırma / Eksiltme
 
 * Seçim içerisine dahil tüm sayıları artırmak için `Ctrl+a`
   kullanılabilir.
-* Seçim içerisine dahil tüm sayıları azaltmak için `Ctrl+z`
+* Seçim içerisine dahil tüm sayıları azaltmak için `Ctrl+x`
   kullanılabilir.
 
 Aşağıdaki sayıları 1'den 4'e kadar olacak şekilde artırın.
@@ -541,8 +542,8 @@ Aşağıdaki sayıları 1'den 4'e kadar olacak şekilde artırın.
 ### Girintiler
 
 Normal modda olduğu gibi görsel modunda da girintiler ayarlanabilir. Ancak tek
-karakterle işlem gerçekleştirilir. Bir satir içerisinde seçili herhangi bir
-karakter varsa, işleme o satır da dahil edilecektir. Satırın tamen seçili
+karakterle işlem gerçekleştirilir. Bir satır içerisinde seçili herhangi bir
+karakter varsa, işleme o satır da dahil edilecektir. Satırın tamamen seçili
 olmasına gerek yoktur.
 
 * `>` bir tab boşluğu içeri alır.
@@ -550,8 +551,11 @@ olmasına gerek yoktur.
 
 ### Paragraf Araçları
 
-Uzun satırları ve özellikle paragrafları birden fazla kısa satıra ayırmak
+* Uzun satırları ve özellikle paragrafları birden fazla kısa satıra ayırmak
 (wrap) için `gw` kullanılır.
+
+* Satırlara ayrılmış paragrafları seçerek `J` tuşuna basarsanız satırları
+  birleştirebilirsiniz.
 
 Aşağıdaki paragrafı satırlara bölün.
 
@@ -561,12 +565,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 Normal modda bahsedilen kayıt özelliklerini burada da kullanabilirsiniz. 
 
+deneme tahtası 1
+deneme  2
+
 ## Görsel Satır
 
 Görsel modunda karakter bazlı bir seçim yaparken görsel satır modunda satır
-bazlı seçim yapılır. Bir satırın yarısını alamazsınız. bir karakter bile
+bazlı seçim yapılır. Bir satırın yarısını alamazsınız. Bir karakter bile
 seçseniz satırın tamamı seçime dahil edilir. Paragraf ve kod bloğu taşıma
 işlerinde faydalı olabilir. Bunun dışında kısayollar aynıdır.
+
+Bu moda geçmek için `V` kullanılır.
 
 Aşağıdaki kod bloklarının yerini değiştirin.
 
@@ -581,33 +590,34 @@ function say_hello {
 
 ## Görsel Blok
 
-Standard görsel modu karakter bazlı, görsel satır modu satır bazlı seçim
-yaparken görsel blok modu koordinat düzeninde bir dörtgen oluşturacak şekilde
-seçim yapar. Bunu anlamak için aşağıdaki dikdörtgeni seçmeyi deneyin.
+Standart görsel modu karakter bazlı, görsel satır modu satır bazlı seçim
+yaparken görsel blok modu koordinat düzleminde bir dörtgen oluşturacak şekilde
+seçim yapar. Bunu anlamak için `Ctrl + v` ile görsel blok moduna geçerek
+aşağıdaki dikdörtgeni seçmeyi deneyin.
 
-****************
-*--------------*
-*--------------*
-*--------------*
-*--------------*
-****************
+###############
+#=============#
+#=============#
+#=============#
+#=============#
+###############
 
 ---
 
 Her zaman satırlar aynı uzunlukta olmayabilir. Aşağıdaki kesik dörtgeni seçmeyi
 deneyin ve çalışma mantığını daha iyi anlayın.
 
-****************
-*--------------*
-*-----------
-*---------
-    -------*
-****************
+###############
+#=============#
+#==========
+#========
+        ======#
+###############
 
 ---
 
 Şimdi daha anlamlı bir yerde kullanalım. Aşağıdaki metinde büyük harflerle
-yazılmaması gereken harfleri görsel blok modunu kullanarak düzenltin.
+yazılmaması gereken harfleri görsel blok modunu kullanarak düzeltin.
 
 Lorem ipsum dolor sit amet,
 CoNSECTETUR adipiscing elit,
@@ -637,12 +647,12 @@ mevcuttur.
 * `\C` büyüklük / küçüklüğe bakarak arar. (Varsayılan ayardır ancak bu ayar
   değiştirildiğinde bu operatör kullanılabilir.)
 
-Bu doküman içerisinde "lorem" terimini arayın.
-Bu doküman içerisinde "lorem\c" terimini arayın.
-Bu doküman içerisinde "eş" terimini arayın.
-Bu doküman içerisinde "\<eş" terimini arayın.
-Bu doküman içerisinde "eş\>" terimini arayın.
-Bu doküman içerisinde "^#.*" terimini arayın.
+Bu doküman içerisinde `lorem` terimini arayın.
+Bu doküman içerisinde `lorem\c` terimini arayın.
+Bu doküman içerisinde `eş` terimini arayın.
+Bu doküman içerisinde `\<eş` terimini arayın.
+Bu doküman içerisinde `eş\>` terimini arayın.
+Bu doküman içerisinde `^#.*` terimini arayın.
 
 ---
 
@@ -668,10 +678,10 @@ Ardından komutun devamını yazıp `Enter` tuşuna basarak komutu
 gerçekleştirirsiniz.
 
 Komut modunda çok sayıda özellik bulunmaktadır. Burada tamamından
-bahsetmeyeceğiz. İhtiytaçduydukça araştırabilir ve yeni özellikleri
+bahsetmeyeceğiz. İhtiytaç duydukça araştırabilir ve yeni özellikleri
 keşfedebilirsiniz. Burada en önemlilerinden bahsedeceğiz.
 
-Vim'de bazı ayarlar vardı ve bu ayarlar `:set` komutuna parametre göndererk
+Vim'de bazı ayarlar vardır ve bu ayarlar `:set` komutuna parametre göndererek
 düzenlenir. Alt başlıklarda buna sıklıkla rastlayacaksınız.
 
 ### Arama Kısayolları
@@ -685,6 +695,7 @@ Arama sonuçlarını renklendirme:
 
 * `:set hlsearch!` arama eşleşmelerinin renklendirilmesini açar/kapatır.
 * `:set hlsearch` arama eşleşmelerinin renklendirilmesini açar.
+* `:set nohlsearch` arama eşleşmelerinin renklendirilmesini kapatır.
 
 ---
 
@@ -692,7 +703,6 @@ Aramalarda büyüklük / küçüklük ayarları:
 
 * `:set ic` ya da `:set ignorecase` ile hassasiyeti kaldırırsınız.
 * `:set noic` ya da `set noignorecase` ile hassasiyeti sağlarsınız.
-* `:set sc` ya da `:set smartcase` ile arama terimi küçükse hepsini, büyükse
   sadece büyükleri aramayı sağlarsınız.
 
 ### Dizin İşlemleri
@@ -716,10 +726,10 @@ kullanılır. Eğer üzerinde çalıştığınız metin bir dosyayla ilişkilend
 `:w DOSYAADI` yazarak kayıt edebilirsiniz. Dosya aksi belirtilmedikçe çalışılan
 dizinde kaydedilecektir. Yani:
 
-* `:w` var olan dosyadaki değişiklikleri yazar (write).
+* `:w` var olan dosyadaki değişiklikleri yazar.
 * `:w!` salt-okunur modda açılan dosyayı yazılabilir hale getirerek yazar.
 * `:w dosya.adı` metni, aynı dizinde "dosya.adı" isimli bir dosyaya kaydeder,
-  dosya yoksa oluşturup kaydederF farklı kaydet amacıyla da kullanılabilir.
+  dosya yoksa oluşturup kaydeder. Farklı kaydet amacıyla da kullanılabilir.
 * `:w /dosya/yolu/dosya.adı` belirtilen dizinde belirtilen dosyaya kayıt yapar.
 * `:wa` açık tüm dosyaları kaydeder.
 * `:wr`, `:wri`, `:writ` ve `:write`; `:w` ile aynıdır.
@@ -729,11 +739,10 @@ dizinde kaydedilecektir. Yani:
 Dosya açma:
 
 Açılan dosyalar yeni bir tamponda (buffer) açılır. Önceden açık olan dosya
-kapatılmaz. Önceki tamponda beklemeye devameder.
+kapatılmaz. Önceki tamponda beklemeye devam eder.
 
-* `:e DOSYA` belirtilen dosyayı düzenlemek üzere açar. Beliertilen dosya yoksa
-  yeni bir metin dosyası açar ancak kaydedilene kadar dosyayı oluşturmaz
-  (edit).
+* `:e DOSYA` belirtilen dosyayı düzenlemek üzere açar. Belirtilen dosya yoksa
+  yeni bir metin dosyası açar ancak kaydedilene kadar dosyayı oluşturmaz.
 * `:ed`, `:edi` ve `:edit`; `:e` ile aynıdır.
 
 ---
@@ -770,8 +779,9 @@ kalmadığı zaman programdan çıkış yapılır.
 
 ### Görünüm
 
+Renk teması ayarlama:
+
 `:colorscheme TEMA` ile renk teması değiştirilir. `Tab` ile seçenekler
-renk teması ayarlama:
 listelenebilir.  Örneğin: `:colorscheme habamax`
 
 ---
@@ -831,21 +841,21 @@ Bu cümle, yukarıdaki ayarları deneyebilmeniz açısından sizler için yazıl
 çalıştırdıktan sonra o programa girdi veremezsiniz. Sadece
 çıktılarını görüntüleyebilirsiniz. Örneğin:
 
-* `:ls -la` çalışılan dizindeki dosyaları listeler.
-* `:./%` "%" şu anda çalışılan dosya anlamına geldiği için bu
+* `:!ls -la` çalışılan dizindeki dosyaları listeler.
+* `:!./%` "%" şu anda çalışılan dosya anlamına geldiği için bu
   dizindeki bu dosyayı çalıştır anlamına gelir. Dosyaya çalıştırma
   yetkisi vermeniz gerekiyorsa onu da bu yöntemle verebilirsiniz.
-* `:chmod +x %` çalışılan dosyaya çalıştırma yetkisi verir.
+* `:!chmod +x %` çalışılan dosyaya çalıştırma yetkisi verir.
 
 ### Diğer Modların Komutlarını Çalıştırmak
 
 * `:normal!KISAYOL` normal mod kısayollarını normal modda yazmak yerine bu
   şekilde de kullanabilirsiniz.
-* `:normal!i` yazarak insert mod komutu kullanabilirsiniz. Aslında burada
+* `:normal!i` yazarak insert mod komutu kullanabilirsiniz. *Aslında burada
   farkına varmanız gereken şey, normal moddan insert moda geçmenin aslında
-  insert adlı bir fonksiyonu çalıştırdığıdır. Demek oluyor ki `:normal!ibu
+  insert adlı bir fonksiyonu çalıştırdığıdır.* Demek oluyor ki `:normal!ibu
   metni yazdır.` yazarsam bulunulan yere "bu metni yazdır." yazmış olacağım.
-* `:normal!4ikoyun ` yazarsam 4 kere "koyun " metnini yarleştirir. Normal
+* `:normal!4ikoyun ` yazarsam 4 kere "koyun " metnini yerleştirir. Normal
   moddan ekleme moduna geçmeden önce de, yazacağınız sayı ekleme modunu
   sonlandırdığınızda o yazıyı kaç kere yazacağınızı da etkiler.
 
@@ -853,7 +863,9 @@ Bu cümle, yukarıdaki ayarları deneyebilmeniz açısından sizler için yazıl
 
 Görsel moda geçip bir komut çalıştırırsanız her satır için o komutu
 çalıştırabilirsiniz. Bir alıştırma ile pekiştirme yapalım. Normal modda`A`
-komutu ile satırın sonuna gidildiğini hatırlarsınız. "println" ile başlayan satırları, görsel satır modu ile seçip `:normal!A;` yazarak satırların sonuna ";" eklenmesini sağlayabilirsiniz.
+komutu ile satırın sonuna gidildiğini hatırlarsınız. "println" ile başlayan
+satırları, görsel satır modu ile seçip `:normal!A;` yazarak satırların sonuna
+";" eklenmesini sağlayabilirsiniz.
 
 ```
 fn main() {
@@ -875,12 +887,16 @@ için o satırda `:s/fatih/mehmet` komutunu çalıştırmayı deneyin.
 
 "Memleketi fatihçiklere borçluyuz, fatihçikler olmasa burada olamazdık."
 
+---
+
 Ancak sadece ilk eşleşmenin değiştiğini gördünüz. Şimdi aynı metni iki
 farklı satırda ele alalım. Görsel satır modu ile iki satırı da seçip
 aynı komutu tekrarlayın.
 
 "Memleketi fatihçiklere borçluyuz, fatihçikler olmasa burada olamazdık.
  Memleketi fatihçiklere borçluyuz, fatihçikler olmasa burada olamazdık."
+
+---
 
 Bu sefer de her satırdaki ilk değişikliğin gerçekleştiğini gördünüz.  Bu
 değişikliğin satırdaki her eşleşme için yapılmasını isterseniz global
@@ -899,7 +915,7 @@ Birkaç farklı bayrak bulunmaktadır:
 
 ---
 
-Arama yerleştirme işleminde "/" karaterinin kendisini kullanacaksanız kaçış
+Arama yerleştirme işleminde "/" karakterinin kendisini kullanacaksanız kaçış
 karakterleri ile uğraşmak yerine farklı ayraçlar kullanabilirsiniz. Aşağıdaki
 komutlar bire bir aynı işlemi gerçekleştirir:
 
@@ -940,5 +956,18 @@ kapanması durumunda pencere de kendiliğinden kapanacaktır.
 
 ## Terminalde Gezinme Modu
 
-``Ctrl+Alt Gr+*, Ctrl+n`` ile önceden bahsedildiği üzere bu moda geçiş yapabilirsiniz.
+``Ctrl+Alt Gr+*, Ctrl+n`` ile önceden bahsedildiği üzere bu moda geçiş
+yapabilirsiniz. Bu modda ekleme moduna geçme kısayolları ile yeniden terminal
+moduna geçiş yapabilirsiniz.
 
+Bu modda metin kopyalama işlemleri yapabilir, geçmişte gezinebilirsiniz.
+kopyaladığınız metni başka bir pencereye ya da terminalin kendisine
+yapıştırabilirsiniz.
+
+# Kapanış
+
+Vim elbette bundan ibaret değildir. Öğrenilecek daha birçok  özelliği,
+özellikle komutları vardır. "~/.vimrc" dosyası oluşturarak kendi vim
+konfigürasyonunuzu oluşturabilir ve hatta eklentiler kurarak çok daha gelişmiş
+bir metin düzenleyicisi elde edebilirsiniz. Vim'i bir IDE haline getirmek de
+mümkündür.
