@@ -661,8 +661,9 @@ aramaya başlar.
 
 ## Geriye Doğru Arama Modu
 
-Arama modunun geriye doğru yapılan halidir. `n` ve `N` kısayollarının da yönü
-değişir.
+Bu moda geçmek için `?` yazılır ve arama terimi yazılır. Ardından `Enter`'e
+basılarak aramaya başlanır.  Arama modunun geriye doğru yapılan halidir. `n` ve
+`N` kısayollarının da yönü değişir.
 
 `#` normal moddayken basıldığında üzerinde bulunulan ifadeyi geriye doğru
 aramaya başlar.
