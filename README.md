@@ -1,3 +1,8 @@
+![YouTube Video](https://img.shields.io/badge/Videoya_gİt-red?logo=youtube&style=for-the-badge)
+![YouTube Video Views](https://img.shields.io/youtube/views/PIYaUPAD3ZY?label=%C4%B0zlemeler&logo=youtube&logoColor=red&style=for-the-badge)
+![YouTube Video Likes](https://img.shields.io/youtube/likes/PIYaUPAD3ZY?label=Beğeniler&logo=undertale&logoColor=red&style=for-the-badge)
+![Stars](https://img.shields.io/github/stars/Elagoht/3-saatte-vim-ogrenin?label=Yıldızlar&style=for-the-badge&logo=starship)
+
 > Bu içerik Furkan Baytekin tarafından [Herkes İçin Linux YouTube
 > kanalı](https://www.youtube.com/channel/UCIWYzLPBy2Av4sgUsRClP0g) için
 > hazırlanmıştır. Bu içeriği kullanabilirsiniz ancak paylaşırken referansta
