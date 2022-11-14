@@ -1,4 +1,4 @@
-![YouTube Video](https://img.shields.io/badge/Videoya_gİt-red?logo=youtube&style=for-the-badge)
+[![YouTube Video](https://img.shields.io/badge/Videoya_gİt-red?logo=youtube&style=for-the-badge)](https://www.youtube.com/watch?v=PIYaUPAD3ZY)
 ![YouTube Video Views](https://img.shields.io/youtube/views/PIYaUPAD3ZY?label=%C4%B0zlemeler&logo=youtube&logoColor=red&style=for-the-badge)
 ![YouTube Video Likes](https://img.shields.io/youtube/likes/PIYaUPAD3ZY?label=Beğeniler&logo=undertale&logoColor=red&style=for-the-badge)
 ![Stars](https://img.shields.io/github/stars/Elagoht/3-saatte-vim-ogrenin?label=Yıldızlar&style=for-the-badge&logo=starship)
