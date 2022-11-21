@@ -1,7 +1,22 @@
-[![YouTube Video](https://img.shields.io/badge/Videoya_gİt-red?logo=youtube&style=for-the-badge)](https://www.youtube.com/watch?v=PIYaUPAD3ZY)
+# Video Dersler
+
+[![YouTube Video](https://img.shields.io/badge/Bölüm_1-red?logo=youtube&style=for-the-badge)](https://www.youtube.com/watch?v=PIYaUPAD3ZY)
 ![YouTube Video Views](https://img.shields.io/youtube/views/PIYaUPAD3ZY?label=%C4%B0zlemeler&logo=youtube&logoColor=red&style=for-the-badge)
 ![YouTube Video Likes](https://img.shields.io/youtube/likes/PIYaUPAD3ZY?label=Beğeniler&logo=undertale&logoColor=red&style=for-the-badge)
+<br/>
+[![YouTube Video](https://img.shields.io/badge/Bölüm_2-red?logo=youtube&style=for-the-badge)](https://www.youtube.com/watch?v=_gf6FWvwdmw)
+![YouTube Video Views](https://img.shields.io/youtube/views/_gf6FWvwdmw?label=%C4%B0zlemeler&logo=youtube&logoColor=red&style=for-the-badge)
+![YouTube Video Likes](https://img.shields.io/youtube/likes/_gf6FWvwdmw?label=Beğeniler&logo=undertale&logoColor=red&style=for-the-badge)
+<br/>
+[![YouTube Video](https://img.shields.io/badge/Bölüm_3-red?logo=youtube&style=for-the-badge)](https://www.youtube.com/watch?v=5XlAlmkQKMw)
+![YouTube Video Views](https://img.shields.io/youtube/views/5XlAlmkQKMw?label=%C4%B0zlemeler&logo=youtube&logoColor=red&style=for-the-badge)
+![YouTube Video Likes](https://img.shields.io/youtube/likes/5XlAlmkQKMw?label=Beğeniler&logo=undertale&logoColor=red&style=for-the-badge)
+
+Repoyu yıldızlamayı unutmayın.
+
 ![Stars](https://img.shields.io/github/stars/Elagoht/3-saatte-vim-ogrenin?label=Yıldızlar&style=for-the-badge&logo=starship)
+
+# Ders Materytali
 
 > Bu içerik Furkan Baytekin tarafından [Herkes İçin Linux YouTube
 > kanalı](https://www.youtube.com/channel/UCIWYzLPBy2Av4sgUsRClP0g) için
@@ -969,6 +984,58 @@ moduna geçiş yapabilirsiniz.
 Bu modda metin kopyalama işlemleri yapabilir, geçmişte gezinebilirsiniz.
 kopyaladığınız metni başka bir pencereye ya da terminalin kendisine
 yapıştırabilirsiniz.
+
+# Vim Konfigürasyon Dosyası: `~/.vimrc`
+
+Bu adreste bir dosya oluşturursanız ve içerisine vim komutlarını yazarsanız 
+ayarlarını her açılışta otomatik olarak uygulayabilirsiniz. Örneğin dosya
+içeriği aşağıdaki gibi olursa
+
+```vim
+colorscheme slate
+```
+
+uygulama her açıldığında renk teması uygulanmış olur. Kısayol atama, ayarlama
+yapma gibi işlemleri bu dosyada gerçekleştirebilirsiniz. Örnek olması açısından
+kendi `.vimrc` dosyamın içeriğini paylaşıyorum.
+
+```vim
+let mapleader=" "
+let &t_SI.="\e[5 q"
+let &t_SR.="\e[3 q"
+let &t_EI.="\e[1 q"
+
+colorscheme slate
+
+noremap <silent> <Esc> :noh<CR>
+nnoremap <C-s> :w<CR>
+inoremap <C-s> <C-o>:w<CR>
+inoremap <C-g><C-w> <C-o>vgw
+inoremap <C-j> <C-o>J
+inoremap <C-d> <C-o>"-yy<C-o>"-p
+nnoremap <C-t> :terminal<CR><C-w>J
+nnoremap <leader>n :new<CR>
+nnoremap <leader>v :vnew<CR>
+nnoremap <leader>x <C-w>q
+nnoremap <C-h> <C-w>H
+nnoremap <C-j> <C-w>J
+nnoremap <C-k> <C-w>K
+nnoremap <C-l> <C-w>L
+tnoremap <C-x> <C-\><C-n>
+nnoremap <C-f> /
+nnoremap <C-r> :%s/
+
+syntax on
+
+set number
+set cursorline
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set ignorecase
+set smartcase
+set noswapfile
+```
 
 # Kapanış
 
