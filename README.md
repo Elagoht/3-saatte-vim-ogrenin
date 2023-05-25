@@ -23,7 +23,7 @@ Repoyu yıldızlamayı unutmayın.
     with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
     A copy of the license is included in the LICENSE file.
 
-# Ders Materytali
+# Ders Materyali
 
 > Bu içerik Furkan Baytekin tarafından [Herkes İçin Linux YouTube
 > kanalı](https://www.youtube.com/channel/UCIWYzLPBy2Av4sgUsRClP0g) için
